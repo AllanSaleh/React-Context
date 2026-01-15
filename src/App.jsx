@@ -10,7 +10,7 @@ function App() {
   const {isDarkMode} = useTheme();
 
   return (
-    <div style={{height: '100vh',backgroundColor:isDarkMode ? "#1f2c38ff" : "#ecf0f1"}}>
+    <div style={{height: '100vh',backgroundColor:isDarkMode ? "#1f2c38ff" : "#cbcfd0ff"}}>
       <BrowserRouter>
         <Navbar />
         <Routes>
