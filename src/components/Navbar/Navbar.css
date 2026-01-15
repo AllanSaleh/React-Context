@@ -1,0 +1,32 @@
+.mainDark{
+  background-color: #2c3e50;
+  color:#ecf0f1;
+}
+
+.mainLight{
+  background-color: #ecf0f1;
+  color:#2c3e50;
+}
+
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 60px;
+}
+
+nav{
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navLinkDark{
+  text-decoration: none;
+  color: #ecf0f1;
+}
+
+.navLinkLight{
+  text-decoration: none;
+  color: #2c3e50;
+}

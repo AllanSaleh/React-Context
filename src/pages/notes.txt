@@ -1,0 +1,3 @@
+In class assignment
+
+Create a component that is Darkmode and lightmode depending on the Theme context
