@@ -17,14 +17,17 @@ const Navbar = () => {
 
   return (
     <header className={isDarkMode ? 'mainDark' : 'mainLight'}>
-      <h1>My Cool App</h1>
+      <h1 onClick={() => navigate('/')}>My Cool App</h1>
       <nav>
         <NavLink className={isDarkMode ? 'navLinkDark' : 'navLinkLight'} to="/">HOME</NavLink>
         {isAuthenticated ? 
         <>
           <NavLink className={isDarkMode ? 'navLinkDark' : 'navLinkLight'} to="/profile">PROFILE</NavLink>
           <p onClick={handleLogout}>LOGOUT</p>
-        </> : <NavLink className={isDarkMode ? 'navLinkDark' : 'navLinkLight'} to="/login">LOGIN</NavLink>
+        </> : <>
+        <NavLink className={isDarkMode ? 'navLinkDark' : 'navLinkLight'} to="/login">LOGIN</NavLink>
+        <NavLink className={isDarkMode ? 'navLinkDark' : 'navLinkLight'} to="/register">REGISTER</NavLink>
+        </>
         }
         <ThemeSwitch onClick={toggleTheme} />
       </nav>

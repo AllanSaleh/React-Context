@@ -1,0 +1,14 @@
+Light Mode Palette
+--deep-space-blue: #003049ff;
+--flag-red: #d62828ff;
+--vivid-tangerine: #f77f00ff;
+--sunflower-gold: #fcbf49ff;
+--vanilla-custard: #eae2b7ff;
+
+Dark Mode Palette
+--dark-deep-space-blue: #0d1b2aff;
+--dark-flag-red: #e85d5dff;
+--dark-vivid-tangerine: #ffa94dff;
+--dark-sunflower-gold: #ffd966ff;
+--dark-vanilla-custard: #f5f0d9ff;
+

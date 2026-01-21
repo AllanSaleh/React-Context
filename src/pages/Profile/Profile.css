@@ -1,0 +1,227 @@
+/* Profile Styling */
+
+:root {
+  /* Light Mode */
+  --deep-space-blue: #003049ff;
+  --flag-red: #d62828ff;
+  --vivid-tangerine: #f77f00ff;
+  --sunflower-gold: #fcbf49ff;
+  --vanilla-custard: #eae2b7ff;
+
+  /* Dark Mode */
+  --dark-deep-space-blue: #0d1b2aff;
+  --dark-flag-red: #e85d5dff;
+  --dark-vivid-tangerine: #ffa94dff;
+  --dark-sunflower-gold: #ffd966ff;
+  --dark-vanilla-custard: #f5f0d9ff;
+}
+
+.dark-mode {
+  background-color: var(--dark-deep-space-blue);
+  color: var(--dark-vanilla-custard);
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+.profile-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  transition: all 0.3s ease;
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 20px 0;
+}
+
+.profile-header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--deep-space-blue);
+  margin: 0 0 10px 0;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .profile-header h1 {
+  color: var(--dark-vanilla-custard);
+}
+
+.profile-name {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--vivid-tangerine);
+  margin: 10px 0 0 0;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .profile-name {
+  color: var(--dark-vivid-tangerine);
+}
+
+.profile-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .profile-card {
+  background: #1a2a3aff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.profile-info {
+  padding: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.info-item label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--deep-space-blue);
+  opacity: 0.7;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .info-item label {
+  color: var(--dark-vanilla-custard);
+  opacity: 0.8;
+}
+
+.info-item p {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--deep-space-blue);
+  margin: 0;
+  padding: 12px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  word-break: break-word;
+}
+
+.dark-mode .info-item p {
+  color: var(--dark-vanilla-custard);
+  background-color: #2a3a4aff;
+  border-left: 3px solid var(--dark-vivid-tangerine);
+}
+
+.profile-actions {
+  padding: 30px 40px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  border-top: 1px solid #e0e0e0;
+  background: #fafafa;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .profile-actions {
+  border-top: 1px solid #3a4a5aff;
+  background: #162233ff;
+}
+
+button {
+  flex: 1;
+  min-width: 150px;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.btn-update {
+  background: linear-gradient(135deg, var(--deep-space-blue) 0%, var(--vivid-tangerine) 100%);
+  color: white;
+}
+
+.btn-update:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 48, 73, 0.2);
+}
+
+.btn-update:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 48, 73, 0.15);
+}
+
+.dark-mode .btn-update {
+  background: linear-gradient(135deg, var(--dark-vivid-tangerine) 0%, var(--dark-sunflower-gold) 100%);
+}
+
+.dark-mode .btn-update:hover {
+  box-shadow: 0 8px 20px rgba(255, 169, 77, 0.3);
+}
+
+.btn-delete {
+  background: var(--flag-red);
+  color: white;
+}
+
+.btn-delete:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(214, 40, 40, 0.2);
+  background: #c21e1e;
+}
+
+.btn-delete:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(214, 40, 40, 0.15);
+}
+
+.dark-mode .btn-delete {
+  background: var(--dark-flag-red);
+}
+
+.dark-mode .btn-delete:hover {
+  box-shadow: 0 8px 20px rgba(232, 93, 93, 0.3);
+  background: #d66b6b;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .profile-container {
+    padding: 20px 15px;
+  }
+
+  .profile-header h1 {
+    font-size: 28px;
+  }
+
+  .profile-name {
+    font-size: 16px;
+  }
+
+  .profile-info {
+    padding: 20px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .profile-actions {
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}

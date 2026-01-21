@@ -30,7 +30,7 @@ export const AuthProvider = ({children}) => {
 
     console.log('Send login request');
 
-    const response = await fetch("https://my-cool-library-7qrj.onrender.com/users/login",{
+    const response = await fetch("http://127.0.0.1:5000/users/login",{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -51,6 +51,33 @@ export const AuthProvider = ({children}) => {
     localStorage.setItem("user", JSON.stringify(loginData.user)); //transforming the user into json readable string
   }
 
+  const registerUser = async (registerUser) => {
+    const response = await fetch("http://127.0.0.1:5000/users", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(registerUser)
+    })
+    const responseData = await response.json();
+    console.log(responseData);
+  }
+
+  const updateUser = async (updateData) => {
+    const response = await fetch("http://127.0.0.1:5000/users", {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+      },
+      body: JSON.stringify(updateData)
+    })
+    const updatedUserData = await response.json();
+    console.log(updatedUserData);
+    setUser(updatedUserData);
+    localStorage.setItem('user', JSON.stringify(updatedUserData));
+  }
+
   const logout = () => {
     setToken(''); //clearing saved tokens
     setUser(null)
@@ -58,11 +85,27 @@ export const AuthProvider = ({children}) => {
     localStorage.removeItem('user');
   }
 
+  const deleteUser = async () => {
+    const response = fetch("http://127.0.0.1:5000/users", {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+      }
+    });
+    const responseData = await response.json();
+    console.log(responseData);
+    logout();
+  }
+
   const value = {
     token,
     user,
     login,
     logout,
+    registerUser,
+    updateUser,
+    deleteUser,
     isAuthenticated: token ? true : false
   }
 

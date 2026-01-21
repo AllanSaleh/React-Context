@@ -1,0 +1,154 @@
+/* UserForm Styling */
+
+:root {
+  /* Light Mode */
+  --deep-space-blue: #003049ff;
+  --flag-red: #d62828ff;
+  --vivid-tangerine: #f77f00ff;
+  --sunflower-gold: #fcbf49ff;
+  --vanilla-custard: #eae2b7ff;
+
+  /* Dark Mode */
+  --dark-deep-space-blue: #0d1b2aff;
+  --dark-flag-red: #e85d5dff;
+  --dark-vivid-tangerine: #ffa94dff;
+  --dark-sunflower-gold: #ffd966ff;
+  --dark-vanilla-custard: #f5f0d9ff;
+}
+
+/* Light Mode Defaults */
+body {
+  background-color: #f8f9fa;
+  color: var(--deep-space-blue);
+}
+
+.dark-mode {
+  background-color: var(--dark-deep-space-blue);
+  color: var(--dark-vanilla-custard);
+}
+
+form {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 40px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.dark-mode form {
+  background: #1a2a3aff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--deep-space-blue);
+  transition: color 0.3s ease;
+}
+
+.dark-mode h1 {
+  color: var(--dark-vanilla-custard);
+}
+
+input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: inherit;
+  background-color: #f5f5f5;
+  color: var(--deep-space-blue);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.dark-mode input {
+  background-color: #2a3a4aff;
+  border-color: #3a4a5aff;
+  color: var(--dark-vanilla-custard);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--deep-space-blue);
+  box-shadow: 0 0 0 3px rgba(0, 48, 73, 0.1);
+  background-color: white;
+}
+
+.dark-mode input:focus {
+  border-color: var(--dark-vivid-tangerine);
+  box-shadow: 0 0 0 3px rgba(255, 169, 77, 0.2);
+  background-color: #3a4a5aff;
+}
+
+input::placeholder {
+  color: #999;
+}
+
+.dark-mode input::placeholder {
+  color: #aaa;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 20px;
+  background: linear-gradient(135deg, var(--deep-space-blue) 0%, var(--vivid-tangerine) 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 48, 73, 0.2);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 48, 73, 0.15);
+}
+
+.dark-mode button {
+  background: linear-gradient(135deg, var(--dark-vivid-tangerine) 0%, var(--dark-sunflower-gold) 100%);
+}
+
+.dark-mode button:hover {
+  box-shadow: 0 8px 20px rgba(255, 169, 77, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  form {
+    margin: 20px;
+    padding: 30px 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+
+  input {
+    padding: 12px 14px;
+    font-size: 16px;
+  }
+
+  button {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
